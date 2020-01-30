@@ -7,105 +7,29 @@
         defaults = {
             propertyName: "value"
         };
+
+    defaults.settings = {
+
+        injectStyle: true,
+
+        levels: 2,
+
+        expandIcon: 'glyphicon glyphicon-plus',
+        collapseIcon: 'glyphicon glyphicon-minus',
+        emptyIcon: 'glyphicon',
+        nodeIcon: '',
+        selectedIcon: '',
+        checkedIcon: 'glyphicon glyphicon-check',
+        uncheckedIcon: 'glyphicon glyphicon-unchecked'
+    };
     var templates = {
-        treeview:  '   <div class="just-padding">  '  + 
-        '   <div class="list-group list-group-root card">  '  + 
-        '     <a href="#item-1" class="list-group-item" data-toggle="collapse">  '  + 
-        '       <i class="bi bi-chevron-right"></i>Item 1  '  + 
-        '     </a>  '  + 
-        '     <div class="list-group collapse" id="item-1">  '  + 
-        '       <a href="#item-1-1" class="list-group-item" data-toggle="collapse">  '  + 
-        '         <i class="bi bi-chevron-right"></i>Item 1.1  '  + 
-        '       </a>  '  + 
-        '       <div class="list-group collapse" id="item-1-1">  '  + 
-        '         <a href="#" class="list-group-item">Item 1.1.1</a>  '  + 
-        '         <a href="#" class="list-group-item">Item 1.1.2</a>  '  + 
-        '         <a href="#" class="list-group-item">Item 1.1.3</a>  '  + 
-        '       </div>  '  + 
-        '       <a href="#item-1-2" class="list-group-item" data-toggle="collapse">  '  + 
-        '         <i class="bi bi-chevron-right"></i>Item 1.2  '  + 
-        '       </a>  '  + 
-        '       <div class="list-group collapse" id="item-1-2">  '  + 
-        '         <a href="#" class="list-group-item">Item 1.2.1</a>  '  + 
-        '         <a href="#" class="list-group-item">Item 1.2.2</a>  '  + 
-        '         <a href="#" class="list-group-item">Item 1.2.3</a>  '  + 
-        '       </div>  '  + 
-        '       <a href="#item-1-3" class="list-group-item" data-toggle="collapse">  '  + 
-        '         <i class="bi bi-chevron-right"></i>Item 1.3  '  + 
-        '       </a>  '  + 
-        '       <div class="list-group collapse" id="item-1-3">  '  + 
-        '         <a href="#" class="list-group-item">Item 1.3.1</a>  '  + 
-        '         <a href="#" class="list-group-item">Item 1.3.2</a>  '  + 
-        '         <a href="#" class="list-group-item">Item 1.3.3</a>  '  + 
-        '       </div>  '  + 
-        '     </div>  '  + 
-        '     <a href="#item-2" class="list-group-item" data-toggle="collapse">  '  + 
-        '       <i class="bi bi-chevron-right"></i>Item 2  '  + 
-        '     </a>  '  + 
-        '     <div class="list-group collapse" id="item-2">  '  + 
-        '       <a href="#item-2-1" class="list-group-item" data-toggle="collapse">  '  + 
-        '         <i class="bi bi-chevron-right"></i>Item 2.1  '  + 
-        '       </a>  '  + 
-        '       <div class="list-group collapse" id="item-2-1">  '  + 
-        '         <a href="#" class="list-group-item">Item 2.1.1</a>  '  + 
-        '         <a href="#" class="list-group-item">Item 2.1.2</a>  '  + 
-        '         <a href="#" class="list-group-item">Item 2.1.3</a>  '  + 
-        '       </div>  '  + 
-        '       <a href="#item-2-2" class="list-group-item" data-toggle="collapse">  '  + 
-        '         <i class="bi bi-chevron-right"></i>Item 2.2  '  + 
-        '       </a>  '  + 
-        '       <div class="list-group collapse" id="item-2-2">  '  + 
-        '         <a href="#" class="list-group-item">Item 2.2.1</a>  '  + 
-        '         <a href="#" class="list-group-item">Item 2.2.2</a>  '  + 
-        '         <a href="#" class="list-group-item">Item 2.2.3</a>  '  + 
-        '       </div>  '  + 
-        '         '  + 
-        '       <a href="#item-2-3" class="list-group-item" data-toggle="collapse">  '  + 
-        '         <i class="bi bi-chevron-right"></i>Item 2.3  '  + 
-        '       </a>  '  + 
-        '       <div class="list-group collapse" id="item-2-3">  '  + 
-        '         <a href="#" class="list-group-item">Item 2.3.1</a>  '  + 
-        '         <a href="#" class="list-group-item">Item 2.3.2</a>  '  + 
-        '         <a href="#" class="list-group-item">Item 2.3.3</a>  '  + 
-        '       </div>  '  + 
-        '     </div>  '  + 
-        '     <a href="#item-3" class="list-group-item" data-toggle="collapse">  '  + 
-        '       <i class="bi bi-chevron-right"></i>Item 3  '  + 
-        '     </a>  '  + 
-        '     <div class="list-group collapse" id="item-3">  '  + 
-        '       <a href="#item-3-1" class="list-group-item" data-toggle="collapse">  '  + 
-        '         <i class="bi bi-chevron-right"></i>Item 3.1  '  + 
-        '       </a>  '  + 
-        '       <div class="list-group collapse" id="item-3-1">  '  + 
-        '         <a href="#" class="list-group-item">Item 3.1.1</a>  '  + 
-        '         <a href="#" class="list-group-item">Item 3.1.2</a>  '  + 
-        '         <a href="#" class="list-group-item">Item 3.1.3</a>  '  + 
-        '       </div>  '  + 
-        '         '  + 
-        '       <a href="#item-3-2" class="list-group-item" data-toggle="collapse">  '  + 
-        '         <i class="bi bi-chevron-right"></i>Item 3.2  '  + 
-        '       </a>  '  + 
-        '       <div class="list-group collapse" id="item-3-2">  '  + 
-        '         <a href="#" class="list-group-item">Item 3.2.1</a>  '  + 
-        '         <a href="#" class="list-group-item">Item 3.2.2</a>  '  + 
-        '         <a href="#" class="list-group-item">Item 3.2.3</a>  '  + 
-        '       </div>  '  + 
-        '       <a href="#item-3-3" class="list-group-item" data-toggle="collapse">  '  + 
-        '         <i class="bi bi-chevron-right"></i>Item 3.3  '  + 
-        '       </a>  '  + 
-        '       <div class="list-group collapse" id="item-3-3">  '  + 
-        '         <a href="#" class="list-group-item">Item 3.3.1</a>  '  + 
-        '         <a href="#" class="list-group-item">Item 3.3.2</a>  '  + 
-        '         <a href="#" class="list-group-item">Item 3.3.3</a>  '  + 
-        '       </div>  '  + 
-        '     </div>  '  + 
-        '   </div>  '  + 
-        '  </div>  ' 
+        treeview: '<div class="bstreeview list-group list-group-root card"></div>',
+        treeviewItem: '<div href="#item-1" class="list-group-item" data-toggle="collapse"></div>',
+        treeviewGroupItem: '<div class="list-group collapse" id="item-1-1"></div>'
     };
     // The actual plugin constructor
     function bstreeView(element, options) {
         this.element = element;
-
         this.settings = $.extend({}, defaults, options);
         this._defaults = defaults;
         this._name = pluginName;
@@ -115,19 +39,65 @@
     // Avoid Plugin.prototype conflicts
     $.extend(bstreeView.prototype, {
         init: function () {
+            this.tree = [];
+            this.nodes = [];
+            if (this.settings.data) {
+                this.settings.data = $.parseJSON(this.settings.data);
 
-            $(this.element).html(templates.treeview);
-            $('.list-group-item').on('click', function() {
-                $('.bi', this)
-                  .toggleClass('bi-chevron-right')
-                  .toggleClass('bi-chevron-down');
-              });
+                this.tree = $.extend(true, [], this.settings.data);
+                delete this.settings.data;
+            }
+            this.settings = $.extend({}, this._defaults.settings, this.settings);
 
+
+            $(this.element).addClass('bstreeview list-group list-group-root card');
+            this.initData({ nodes: this.tree }, 0);
+            this.build($(this.element), this.tree, 0);
         },
-        yourOtherFunction: function (text) {
 
-            // some logic
-            $(this.element).text(text);
+        initData: function (node, level) {
+            if (!node.nodes) return;
+            level += 1;
+
+            var parent = node;
+            var _this = this;
+            $.each(node.nodes, function checkStates(index, node) {
+
+                node.nodeId = _this.nodes.length;
+                node.parentId = parent.nodeId;
+                _this.nodes.push(node);
+
+                if (node.nodes) {
+                    _this.initData(node, level);
+                }
+            });
+        },
+
+        build: function (parentElement, nodes, depth) {
+            var leftPadding = "1.25rem;";
+            if (depth > 0) {
+                leftPadding = (1.25 + depth * 1.25).toString() + "rem;";
+            }
+
+            depth += 1;
+            var _this = this;
+
+            $.each(nodes, function addNodes(id, node) {
+                
+                var treeItem = $(templates.treeviewItem)
+                    .attr('href', '#item-' + node.nodeId)
+                    .attr('style', 'padding-left:'+leftPadding);
+                treeItem.append(node.text);
+
+                parentElement.append(treeItem);
+
+                if (node.nodes) {
+                    var treeGroup = $(templates.treeviewGroupItem)
+                        .attr('id', 'item-' + node.nodeId);
+                    parentElement.append(treeGroup);
+                    _this.build(treeGroup, node.nodes, depth);
+                }
+            });
         }
     });
 

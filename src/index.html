@@ -1,25 +1,69 @@
 <html>
+
 <head>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="bstreeview.css" rel="stylesheet">
 </head>
-<body>
-    <div id="tree">
 
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="tree">
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-  
-  <script src="bstreeview.js">
-  </script>
-  <script>
+
+    <script src="bstreeview.js">
+    </script>
+    <script>
         $(function () {
 
-            $('#tree').bstreeview();
+            var json = '[' +
+		'{' +
+			'"text": "Parent 1",' +
+			'"nodes": [' +
+				'{' +
+					'"text": "Child 1",' +
+					'"nodes": [' +
+						'{' +
+							'"text": "Grandchild 1"' +
+						'},' +
+						'{' +
+							'"text": "Grandchild 2"' +
+						'}' +
+					']' +
+				'},' +
+				'{' +
+					'"text": "Child 2"' +
+				'}' +
+			']' +
+		'},' +
+		'{' +
+			'"text": "Parent 2"' +
+		'},' +
+		'{' +
+			'"text": "Parent 3"' +
+		'},' +
+		'{' +
+			'"text": "Parent 4"' +
+		'},' +
+		'{' +
+			'"text": "Parent 5"' +
+		'}' +
+    ']';
+    
+            $('#tree').bstreeview({data:json});
 
         });
     </script>
