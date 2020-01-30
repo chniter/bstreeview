@@ -1,8 +1,46 @@
 .just-padding {
     padding: 15px;
 }
+.bstreeview {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
 
-.bstreeview.list-group.list-group-root {
+    padding: 0;
+    overflow: hidden;
+}
+
+
+.bstreeview .list-group {
+    margin-bottom: 0;
+}
+
+.bstreeview .list-group-item {
+    border-radius: 0;
+    border-width: 1px 0 0 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.bstreeview .list-group-item:hover {
+    background-color:#dee2e6;
+}
+
+.bstreeview > .list-group-item:first-child {
+    border-top-width: 0;
+}
+
+
+/* .bstreeview.list-group.list-group-root {
     padding: 0;
     overflow: hidden;
 }
@@ -16,23 +54,17 @@
     border-width: 1px 0 0 0;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.bstreeview.list-group.list-group-root .list-group-item:hover {
+    background-color:#dee2e6;
 }
 
 .bstreeview.list-group.list-group-root > .list-group-item:first-child {
     border-top-width: 0;
-}
-/* 
-.bstreeview.list-group.list-group-root > .list-group > .list-group-item {
-    padding-left: 30px;
-}
-
-.bstreeview.list-group.list-group-root > .list-group > .list-group > .list-group-item {
-    padding-left: 45px;
 } */
 
-.bstreeview.list-group-item .glyphicon {
+.bstreeview .state-icon {
     margin-right: 5px;
 }
-/* .bstreeview .indent {
-    padding-left: 45px;
-} */
