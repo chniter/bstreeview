@@ -66,5 +66,8 @@
 } */
 
 .bstreeview .state-icon {
+    margin-right: 8px;
+}
+.bstreeview .item-icon {
     margin-right: 5px;
 }

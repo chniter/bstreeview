@@ -17,6 +17,11 @@
 
 					</div>
 				</div>
+				<div class="col-md-6 just-padding">
+					<div id="tree1">
+
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -34,14 +39,18 @@
 			var json = '[' +
 				'{' +
 				'"text": "Parent 1",' +
+				'"icon": "fa fa-folder",' +
 				'"nodes": [' +
 				'{' +
 				'"text": "Child 1",' +
+				'"icon": "fa fa-folder",' +
 				'"nodes": [' +
 				'{' +
+				'"icon": "fa fa-folder",' +
 				'"text": "Grandchild 1"' +
 				'},' +
 				'{' +
+				'"icon": "fa fa-folder",' +
 				'"text": "Grandchild 2"' +
 				'}' +
 				']' +
@@ -52,20 +61,24 @@
 				']' +
 				'},' +
 				'{' +
+				'"icon": "fa fa-folder",' +
 				'"text": "Parent 2"' +
 				'},' +
 				'{' +
+				'"icon": "fa fa-folder",' +
 				'"text": "Parent 3"' +
 				'},' +
 				'{' +
 				'"text": "Parent 4"' +
 				'},' +
 				'{' +
+				'"icon": "fa fa-folder",' +
 				'"text": "Parent 5"' +
 				'}' +
 				']';
 
 			$('#tree').bstreeview({ data: json });
+			//$('#tree1').bstreeview({ data: json });
 
 		});
 	</script>
