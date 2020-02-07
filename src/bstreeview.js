@@ -8,9 +8,7 @@
  * Project: https://github.com/chniter/bstreeview
  */
 ; (function ($, window, document, undefined) {
-
     "use strict";
-
     /**
      * Default bstreeview  options.
      */
@@ -41,11 +39,13 @@
         this.settings = $.extend({}, defaults, options);
         this.init();
     }
-
     /**
      * Avoid plugin conflict.
      */
     $.extend(bstreeView.prototype, {
+        /**
+         * bstreeview intialize.
+         */
         init: function () {
             this.tree = [];
             this.nodes = [];
@@ -67,7 +67,6 @@
                     .toggleClass(_this.settings.expandIcon)
                     .toggleClass(_this.settings.collapseIcon);
             });
-
         },
         /**
          * Initialize treeview Data.
@@ -101,7 +100,6 @@
             if (depth > 0) {
                 leftPadding = (_this.settings.indent + depth * _this.settings.indent).toString() + "rem;";
             }
-
             depth += 1;
             // Add each node and sub-nodes.
             $.each(nodes, function addNodes(id, node) {
@@ -147,5 +145,4 @@
             }
         });
     };
-
 })(jQuery, window, document);
