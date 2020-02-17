@@ -1,6 +1,3 @@
-.just-padding {
-    padding: 15px;
-}
 .bstreeview {
     position: relative;
     display: -ms-flexbox;
@@ -17,7 +14,6 @@
     padding: 0;
     overflow: hidden;
 }
-
 
 .bstreeview .list-group {
     margin-bottom: 0;
@@ -38,32 +34,6 @@
 .bstreeview > .list-group-item:first-child {
     border-top-width: 0;
 }
-
-
-/* .bstreeview.list-group.list-group-root {
-    padding: 0;
-    overflow: hidden;
-}
-
-.bstreeview.list-group.list-group-root .list-group {
-    margin-bottom: 0;
-}
-
-.bstreeview.list-group.list-group-root .list-group-item {
-    border-radius: 0;
-    border-width: 1px 0 0 0;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    cursor: pointer;
-}
-
-.bstreeview.list-group.list-group-root .list-group-item:hover {
-    background-color:#dee2e6;
-}
-
-.bstreeview.list-group.list-group-root > .list-group-item:first-child {
-    border-top-width: 0;
-} */
 
 .bstreeview .state-icon {
     margin-right: 8px;
