@@ -6,7 +6,7 @@
 
 A very simple plugin to build a basic and elegant Treeview with boostrap 4.
 
-![Bootstrap Tree View Default](https://github.com/chniter/bstreeview/master/screenshots/bstreeview.PNG)
+![Bootstrap Tree View Default](https://github.com/chniter/bstreeview/blob/master/screeshots/bstreeview.PNG?raw=true)
 
 ## Dependencies
 
