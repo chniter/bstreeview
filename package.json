@@ -1,0 +1,38 @@
+{
+  "name": "bstreeview",
+  "version": "1.0.0",
+  "description": "Bootstrap 4 simple treeview.",
+  "main":"[\"./dist/css/bstreeview.css\",\"./dist/js/bstreeview.js\"]",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chniter/bstreeview.git"
+  },
+  "keywords": [
+    "[\"bstreeview\"",
+    "\"twitter\"",
+    "\"bootstrap\"",
+    "\"bootstrap",
+    "4\"",
+    "\"tree\"",
+    "\"treeview\"",
+    "\"tree-view\"",
+    "\"navigation\"",
+    "\"list-item\"",
+    "\"javascript\"",
+    "\"jquery\"",
+    "\"jquery-plugin\"]"
+  ],
+  "author": {
+    "name": "Sami CHNITER"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/chniter/bstreeview/issues"
+  },
+  "homepage": "https://github.com/chniter/bstreeview#readme"
+}
