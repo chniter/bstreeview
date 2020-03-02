@@ -2,7 +2,7 @@
 
 ---
 
-[![npm version](https://img.shields.io/npm/v/bstreeview.svg?style=flat)](https://www.npmjs.com/package/bootstrap-treeview)
+[![npm version](https://img.shields.io/npm/v/bstreeview.svg?style=flat)](https://www.npmjs.com/package/bstreeview)
 
 A very simple plugin to build a basic and elegant Treeview with boostrap 4.
 
