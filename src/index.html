@@ -31,48 +31,48 @@
 	<script>
 		$(function () {
 
-			var json = '[' +
-				'{' +
-				'"text": "Inbox",' +
-				'"icon": "fa fa-inbox",' +
-				'"nodes": [' +
-				'{' +
-				'"text": "Office",' +
-				'"icon": "fa fa-inbox",' +
-				'"nodes": [' +
-				'{' +
-				'"icon": "fa fa-inbox",' +
-				'"text": "Customers"' +
-				'},' +
-				'{' +
-				'"icon": "fa fa-inbox",' +
-				'"text": "Co-Workers"' +
-				'}' +
-				']' +
-				'},' +
-				'{' +
-				'"icon": "fa fa-inbox",' +
-				'"text": "Others"' +
-				'}' +
-				']' +
-				'},' +
-				'{' +
-				'"icon": "fa fa-archive",' +
-				'"text": "Drafts"' +
-				'},' +
-				'{' +
-				'"icon": "fa fa-calendar",' +
-				'"text": "Calendar"' +
-				'},' +
-				'{' +
-				'"icon": "fa fa-address-book",' +
-				'"text": "Contacts"' +
-				'},' +
-				'{' +
-				'"icon": "fa fa-trash",' +
-				'"text": "Deleted Items"' +
-				'}' +
-				']';
+			var json = [
+				{
+					text: "Inbox",
+					icon: "fa fa-inbox",
+					nodes: [
+						{
+							text: "Office",
+							icon: "fa fa-inbox",
+							nodes: [
+								{
+									icon: "fa fa-inbox",
+									text: "Customers"
+								},
+								{
+									icon: "fa fa-inbox",
+									text: "Co-Workers"
+								}
+							]
+						},
+						{
+							icon: "fa fa-inbox",
+							text: "Others"
+						}
+					]
+				},
+				{
+					icon: "fa fa-archive",
+					text: "Drafts"
+				},
+				{
+					icon: "fa fa-calendar",
+					text: "Calendar"
+				},
+				{
+					icon: "fa fa-address-book",
+					text: "Contacts"
+				},
+				{
+					icon: "fa fa-trash",
+					text: "Deleted Items"
+				}
+			];
 
 			$('#tree').bstreeview({ data: json });
 
