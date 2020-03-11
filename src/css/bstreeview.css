@@ -37,6 +37,8 @@
 
 .bstreeview .state-icon {
     margin-right: 8px;
+    width: 12px;
+    text-align: center;
 }
 .bstreeview .item-icon {
     margin-right: 5px;
