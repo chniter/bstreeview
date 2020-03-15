@@ -139,6 +139,18 @@ The text value displayed for a given tree node.
 
 The icon displayed on a given node.
 
+#### href
+`String` `Optional`
+
+A custom `href` attribute value for a given node.
+
+#### class
+`String` `Optional`
+
+A class name or space separated list of class names to add to a given node.
+
+
+
 ## Options
 
 ```javascript
