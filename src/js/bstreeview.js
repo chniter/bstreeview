@@ -51,6 +51,7 @@
             this.nodes = [];
             // Retrieve bstreeview Json Data.
             if (this.settings.data) {
+                this.settings.data = $.parseJSON(this.settings.data);
                 this.tree = $.extend(true, [], this.settings.data);
                 delete this.settings.data;
             }
@@ -120,6 +121,17 @@
                 }
                 // Set node Text.
                 treeItem.append(node.text);
+
+                // Reset node href if present
+                if (node.href) {
+                    treeItem.attr('href', node.href);
+                }
+
+                // Add class to node if present
+                if (node.class) {
+                    treeItem.addClass(node.class);
+                }
+
                 // Attach node to parent.
                 parentElement.append(treeItem);
                 // Build child nodes.
