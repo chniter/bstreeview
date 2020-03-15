@@ -78,8 +78,10 @@ var tree = [
         icon: "fa fa-folder",
         nodes: [
           {
-            text: "Sub Child Node 1",
-            icon: "fa fa-folder"
+            text:  "Sub Child Node 1",
+            icon:  "fa fa-folder",
+            class: "nav-level-3",
+            href:  "#option/1.1.1"
           },
           {
             text: "Sub Child Node 2",
