@@ -78,8 +78,10 @@ var tree = [
         icon: "fa fa-folder",
         nodes: [
           {
-            text: "Sub Child Node 1",
-            icon: "fa fa-folder"
+            text:  "Sub Child Node 1",
+            icon:  "fa fa-folder",
+            class: "nav-level-3",
+            href:  "#option/1.1.1"
           },
           {
             text: "Sub Child Node 2",
@@ -138,6 +140,18 @@ The text value displayed for a given tree node.
 `String` `Optional`
 
 The icon displayed on a given node.
+
+#### href
+`String` `Optional`
+
+A custom `href` attribute value for a given node.
+
+#### class
+`String` `Optional`
+
+A class name or space separated list of class names to add to a given node.
+
+
 
 ## Options
 
