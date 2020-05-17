@@ -1,3 +1,12 @@
+/*
+ @preserve
+ bstreeview.css
+ Version: 1.2.0
+ Authors: Sami CHNITER <sami.chniter@gmail.com>
+ Copyright 2020
+ License: Apache License 2.0
+ Project: https://github.com/chniter/bstreeview
+*/
 .bstreeview {
     position: relative;
     display: -ms-flexbox;

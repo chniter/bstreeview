@@ -1,8 +1,8 @@
 {
   "name": "bstreeview",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Bootstrap 4 simple treeview.",
-  "main":"[\"./dist/css/bstreeview.css\",\"./dist/js/bstreeview.js\"]",
+  "main": "[\"./dist/css/bstreeview.min.css\",\"./dist/js/bstreeview.min.js\"]",
   "dependencies": {},
   "devDependencies": {},
   "scripts": {

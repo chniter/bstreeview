@@ -78,10 +78,11 @@ var tree = [
         icon: "fa fa-folder",
         nodes: [
           {
+            id:    "sub-node-1",
             text:  "Sub Child Node 1",
             icon:  "fa fa-folder",
             class: "nav-level-3",
-            href:  "#option/1.1.1"
+            href:  "https://google.com"
           },
           {
             text: "Sub Child Node 2",
@@ -122,13 +123,6 @@ This property `text` is required to display nodes.
 }
 ```
 
-Yes, we can make some options for bstreeview, i will explain them later :p
-
-```javascript
-{
-  
-```
-
 ### Node Properties
 
 #### text
@@ -151,14 +145,52 @@ A custom `href` attribute value for a given node.
 
 A class name or space separated list of class names to add to a given node.
 
+#### id
+`String` `Optional`
 
+ID attribute value to assign to a given node.
 
 ## Options
+
+#### data
+`String` `Mandatory`
+
+Json or string array of nodes.
+
+#### expandIcon
+`String` `Optional`
+
+Expand icon class name, default is `fa fa-angle-down fa-fw`.
+
+#### collapseIcon
+`String` `Optional`
+
+Collapse icon class name, default is `fa fa-angle-right fa-fw`.
+
+#### indent
+`number with decimals` `Optional`
+
+Custom indent between node levels (rem), default is `1.25`.
+
+#### parentsMarginLeft
+`String` `Optional`
+
+margin-left value of parent nodes, default is `1.25rem`.
+
+#### openNodeLinkOnNewTab
+`Boolean` `Optional`
+
+Open node link on new browser Tab, default is `true`.
 
 ```javascript
 // Example: initializing the bstreeview
 $('#tree').treeview({
-  data: data         // data is required
+  data: data,
+  expandIcon: 'fa fa-angle-down fa-fw',
+  collapseIcon: 'fa fa-angle-right fa-fw',
+  indent: 1.25,
+  parentsMarginLeft: '1.25rem',
+  openNodeLinkOnNewTab: true
 });
 ```
 

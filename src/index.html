@@ -1,10 +1,13 @@
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>bstreeview</title>
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link href="css/bstreeview.css" rel="stylesheet">
 </head>
 
@@ -21,10 +24,10 @@
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-		crossorigin="anonymous"></script>
+			integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+			crossorigin="anonymous"></script>
 
 	<script src="js/bstreeview.js">
 	</script>
@@ -34,48 +37,60 @@
 			var json = [
 				{
 					text: "Inbox",
-					icon: "fa fa-inbox",
+					icon: "fa fa-inbox fa-fw",
 					nodes: [
 						{
 							text: "Office",
-							icon: "fa fa-inbox",
+							icon: "fa fa-inbox fa-fw",
 							nodes: [
 								{
-									icon: "fa fa-inbox",
+									icon: "fa fa-inbox fa-fw",
 									text: "Customers"
 								},
 								{
-									icon: "fa fa-inbox",
+									icon: "fa fa-inbox fa-fw",
 									text: "Co-Workers"
 								}
 							]
 						},
 						{
-							icon: "fa fa-inbox",
+							icon: "fa fa-inbox fa-fw",
 							text: "Others"
 						}
 					]
 				},
 				{
-					icon: "fa fa-archive",
+					icon: "fa fa-archive fa-fw",
 					text: "Drafts"
 				},
 				{
-					icon: "fa fa-calendar",
+					icon: "fa fa-calendar fa-fw",
 					text: "Calendar"
 				},
 				{
-					icon: "fa fa-address-book",
+					icon: "fa fa-address-book fa-fw",
 					text: "Contacts"
 				},
 				{
-					icon: "fa fa-trash",
+					icon: "fa fa-trash fa-fw",
 					text: "Deleted Items"
-				}
+				},
+                {
+                    icon: "fa fa-globe fa-fw",
+					text: "Go to Google",
+                    class: "text-info",
+                    href: "https://google.com"
+                }
 			];
 
-			$('#tree').bstreeview({ data: json });
-
+			$('#tree').bstreeview({
+				data: json,
+                expandIcon: 'fa fa-angle-down fa-fw',
+                collapseIcon: 'fa fa-angle-right fa-fw',
+                indent: 1.25,
+                parentsMarginLeft: '1.25rem',
+                openNodeLinkOnNewTab: true
+			});
 		});
 	</script>
 </body>
