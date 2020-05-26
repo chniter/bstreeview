@@ -26,7 +26,7 @@ You can install using npm (recommended):
 $ npm install bstreeview
 ```
 
-or [download](https://github.com/chniter/bstreeview/releases/tag/v1.0.0) manually.
+or [download](https://github.com/chniter/bstreeview/releases/tag/v1.2.0) manually.
 
 
 
