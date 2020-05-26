@@ -184,7 +184,7 @@ Open node link on new browser Tab, default is `true`.
 
 ```javascript
 // Example: initializing the bstreeview
-$('#tree').treeview({
+$('#tree').bstreeview({
   data: data,
   expandIcon: 'fa fa-angle-down fa-fw',
   collapseIcon: 'fa fa-angle-right fa-fw',
