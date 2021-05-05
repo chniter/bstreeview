@@ -126,7 +126,7 @@
                 // Set Expand and Collapse icones.
                 if (node.nodes) {
                     var treeItemStateIcon = $(templates.treeviewItemStateIcon)
-                        .addClass(_this.settings.collapseIcon);
+                        .addClass(node.expanded ? _this.settings.expandIcon : _this.settings.collapseIcon);
                     treeItem.append(treeItemStateIcon);
                 }
                 // set node icon if exist.
@@ -156,6 +156,10 @@
                     // Node group item.
                     var treeGroup = $(templates.treeviewGroupItem)
                         .attr('id', _this.itemIdPrefix + node.nodeId);
+                    // Expand the node if requested.
+                    if (node.expanded) {
+                        treeGroup.addClass('show');
+                    }
                     parentElement.append(treeGroup);
                     _this.build(treeGroup, node.nodes, depth);
                 }
