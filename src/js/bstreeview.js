@@ -1,6 +1,6 @@
 /*! @preserve
  * bstreeview.js
- * Version: 1.2.0
+ * Version: 1.3.0
  * Authors: Sami CHNITER <sami.chniter@gmail.com>
  * Copyright 2020
  * License: Apache License 2.0
@@ -22,11 +22,27 @@
 
         };
     /**
+    * Define Bootstrap 4 attributes
+    */
+    let dataToggleAttr = 'data-toggle';
+    let dataTargetAttr = 'data-target';
+    /**
+    * get Bootstrap version
+    */
+    let bootstrapVersion = (bootstrap.Tooltip.VERSION).charAt(0);
+    /**
+    * If Bootstrap 5, redefine attributes
+    */
+    if (bootstrapVersion === '5') {
+        dataToggleAttr = 'data-bs-toggle';
+        dataTargetAttr = 'data-bs-target';
+    }
+    /**
      * bstreeview HTML templates.
      */
     var templates = {
         treeview: '<div class="bstreeview"></div>',
-        treeviewItem: '<div role="treeitem" class="list-group-item" data-toggle="collapse"></div>',
+        treeviewItem: '<div role="treeitem" class="list-group-item" ' + dataToggleAttr + '="collapse"></div>',
         treeviewGroupItem: '<div role="group" class="list-group collapse" id="itemid"></div>',
         treeviewItemStateIcon: '<i class="state-icon"></i>',
         treeviewItemIcon: '<i class="item-icon"></i>'
@@ -120,7 +136,7 @@
             $.each(nodes, function addNodes(id, node) {
                 // Main node element.
                 var treeItem = $(templates.treeviewItem)
-                    .attr('data-target', "#" + _this.itemIdPrefix + node.nodeId)
+                    .attr(dataTargetAttr, "#" + _this.itemIdPrefix + node.nodeId)
                     .attr('style', 'padding-left:' + leftPadding)
                     .attr('aria-level', depth);
                 // Set Expand and Collapse icones.
