@@ -1,6 +1,6 @@
 /*! @preserve
  * bstreeview.js
- * Version: 1.3.0
+ * Version: 1.2.0
  * Authors: Sami CHNITER <sami.chniter@gmail.com>
  * Copyright 2020
  * License: Apache License 2.0
