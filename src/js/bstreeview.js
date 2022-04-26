@@ -16,6 +16,9 @@
         defaults = {
             expandIcon: 'fa fa-angle-down fa-fw',
             collapseIcon: 'fa fa-angle-right fa-fw',
+            blankIcon: 'fa fa-blank fa-fw',
+            editIcon: 'fa fa-pencil fa-fw',
+            deleteIcon: 'fa fa-trash fa-fw',
             indent: 1.25,
             parentsMarginLeft: '1.25rem',
             openNodeLinkOnNewTab: true
@@ -68,9 +71,12 @@
             this.build($(this.element), this.tree, 0);
             // Update angle icon on collapse
             $(this.element).on('click', '.list-group-item', function (e) {
-                $('.state-icon', this)
-                    .toggleClass(_this.settings.expandIcon)
-                    .toggleClass(_this.settings.collapseIcon);
+                if (this.children[0] != _this.settings.blankIcon)
+                {
+                    $('.state-icon', this)
+                        .toggleClass(_this.settings.expandIcon)
+                        .toggleClass(_this.settings.collapseIcon);
+                }
                 // navigate to href if present
                 if (e.target.hasAttribute('href')) {
                     if (_this.settings.openNodeLinkOnNewTab) {
@@ -123,10 +129,16 @@
                     .attr('data-target', "#" + _this.itemIdPrefix + node.nodeId)
                     .attr('style', 'padding-left:' + leftPadding)
                     .attr('aria-level', depth);
+                
                 // Set Expand and Collapse icones.
-                if (node.nodes) {
+                if (node.nodes.length > 0) {
                     var treeItemStateIcon = $(templates.treeviewItemStateIcon)
-                        .addClass(_this.settings.collapseIcon);
+                        .addClass(node.expanded ? _this.settings.expandIcon : _this.settings.collapseIcon);
+                    treeItem.append(treeItemStateIcon);
+                }
+                else { 
+                    var treeItemStateIcon = $(templates.treeviewItemStateIcon)
+                        .addClass(_this.settings.blankIcon);
                     treeItem.append(treeItemStateIcon);
                 }
                 // set node icon if exist.
@@ -149,6 +161,13 @@
                 if (node.id) {
                     treeItem.attr('id', node.id);
                 }
+                // Add edit icon
+                if (node.edit)
+                {
+                    var treeItemEdit = $(templates.treeviewItemIcon)
+                        .addClass(_this.settings.editIcon).attr('href', node.id);
+                    treeItem.append(treeItemEdit);
+                }
                 // Attach node to parent.
                 parentElement.append(treeItem);
                 // Build child nodes.
@@ -156,6 +175,10 @@
                     // Node group item.
                     var treeGroup = $(templates.treeviewGroupItem)
                         .attr('id', _this.itemIdPrefix + node.nodeId);
+                    // Expand the node if requested.
+                    if (node.expanded) {
+                        treeGroup.addClass('show');
+                    }
                     parentElement.append(treeGroup);
                     _this.build(treeGroup, node.nodes, depth);
                 }
