@@ -17,8 +17,6 @@
             expandIcon: 'fa fa-angle-down fa-fw',
             collapseIcon: 'fa fa-angle-right fa-fw',
             blankIcon: 'fa fa-blank fa-fw',
-            editIcon: 'fa fa-pencil fa-fw',
-            deleteIcon: 'fa fa-trash fa-fw',
             indent: 1.25,
             parentsMarginLeft: '1.25rem',
             openNodeLinkOnNewTab: true
@@ -160,13 +158,6 @@
                 // Add custom id to node if present
                 if (node.id) {
                     treeItem.attr('id', node.id);
-                }
-                // Add edit icon
-                if (node.edit)
-                {
-                    var treeItemEdit = $(templates.treeviewItemIcon)
-                        .addClass(_this.settings.editIcon).attr('href', node.id);
-                    treeItem.append(treeItemEdit);
                 }
                 // Attach node to parent.
                 parentElement.append(treeItem);
