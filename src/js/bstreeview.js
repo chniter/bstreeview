@@ -1,11 +1,12 @@
 /*! @preserve
  * bstreeview.js
- * Version: 1.2.0
+ * Version: 1.2.2
  * Authors: Sami CHNITER <sami.chniter@gmail.com>
  * Copyright 2020
  * License: Apache License 2.0
  *
  * Project: https://github.com/chniter/bstreeview
+ * Project: https://github.com/nhmvienna/bs5treeview (bootstrap 5)
  */
 ; (function ($, window, document, undefined) {
     "use strict";
@@ -16,6 +17,7 @@
         defaults = {
             expandIcon: 'fa fa-angle-down fa-fw',
             collapseIcon: 'fa fa-angle-right fa-fw',
+            expandClass: 'show',
             indent: 1.25,
             parentsMarginLeft: '1.25rem',
             openNodeLinkOnNewTab: true
@@ -26,15 +28,17 @@
      */
     var templates = {
         treeview: '<div class="bstreeview"></div>',
-        treeviewItem: '<div role="treeitem" class="list-group-item" data-toggle="collapse"></div>',
+        treeviewHeader: '<div class="row"></div>',
+        treeviewItem: '<div role="treeitem" class="list-group-item col-9" data-bs-toggle="collapse"></div>',
+        treeviewAction: '<div class="col-3"></div>',
         treeviewGroupItem: '<div role="group" class="list-group collapse" id="itemid"></div>',
         treeviewItemStateIcon: '<i class="state-icon"></i>',
         treeviewItemIcon: '<i class="item-icon"></i>'
     };
     /**
      * BsTreeview Plugin constructor.
-     * @param {*} element 
-     * @param {*} options 
+     * @param {*} element
+     * @param {*} options
      */
     function bstreeView(element, options) {
         this.element = element;
@@ -80,11 +84,16 @@
                         window.location = e.target.getAttribute('href');
                     }
                 }
+                else
+                {
+                    // Toggle the data-bs-target. Issue with Bootstrap toggle and dynamic code
+                    $($(this).attr("data-bs-target")).collapse('toggle');
+                }
             });
         },
         /**
          * Initialize treeview Data.
-         * @param {*} node 
+         * @param {*} node
          */
         initData: function (node) {
             if (!node.nodes) return;
@@ -103,9 +112,9 @@
         },
         /**
          * Build treeview.
-         * @param {*} parentElement 
-         * @param {*} nodes 
-         * @param {*} depth 
+         * @param {*} parentElement
+         * @param {*} nodes
+         * @param {*} depth
          */
         build: function (parentElement, nodes, depth) {
             var _this = this;
@@ -118,15 +127,21 @@
             depth += 1;
             // Add each node and sub-nodes.
             $.each(nodes, function addNodes(id, node) {
+                //Node Header and Actions
+                var treeItemHeader = $(templates.treeviewHeader);
+                var treeItemAction = $(templates.treeviewAction);
+                if(node.action) {
+                    treeItemAction.append(node.action);
+                }
                 // Main node element.
                 var treeItem = $(templates.treeviewItem)
-                    .attr('data-target', "#" + _this.itemIdPrefix + node.nodeId)
+                    .attr('data-bs-target', "#" + _this.itemIdPrefix + node.nodeId)
                     .attr('style', 'padding-left:' + leftPadding)
                     .attr('aria-level', depth);
                 // Set Expand and Collapse icones.
                 if (node.nodes) {
                     var treeItemStateIcon = $(templates.treeviewItemStateIcon)
-                        .addClass(_this.settings.collapseIcon);
+                        .addClass((node.expanded)?_this.settings.expandIcon:_this.settings.collapseIcon);
                     treeItem.append(treeItemStateIcon);
                 }
                 // set node icon if exist.
@@ -150,7 +165,9 @@
                     treeItem.attr('id', node.id);
                 }
                 // Attach node to parent.
-                parentElement.append(treeItem);
+                treeItemHeader.append(treeItem);
+                treeItemHeader.append(treeItemAction);
+                parentElement.append(treeItemHeader);
                 // Build child nodes.
                 if (node.nodes) {
                     // Node group item.
@@ -158,6 +175,9 @@
                         .attr('id', _this.itemIdPrefix + node.nodeId);
                     parentElement.append(treeGroup);
                     _this.build(treeGroup, node.nodes, depth);
+                    if (node.expanded) {
+                        treeGroup.addClass(_this.settings.expandClass);
+                    }
                 }
             });
         }
